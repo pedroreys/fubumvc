@@ -99,6 +99,7 @@
     <Compile Include="Assets\Files\AssetFileDataMother.cs" />
     <Compile Include="Assets\Files\AssetPathTester.cs" />
     <Compile Include="Assets\Files\AssetPipelineTester.cs" />
+    <Compile Include="Assets\Files\PackageAssetsTester.cs" />
     <Compile Include="Behaviors\BasicBehaviorTester.cs" />
     <Compile Include="Behaviors\InterceptExceptionBehaviorTester.cs" />
     <Compile Include="Behaviors\ITargetController.cs" />
