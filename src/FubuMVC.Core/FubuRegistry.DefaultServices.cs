@@ -209,7 +209,7 @@ namespace FubuMVC.Core
 
         private void registerActivators(BehaviorGraph graph)
         {
-            graph.Services.FillType(typeof (IActivator), typeof (ScriptGraphConfigurationActivator));
+            graph.Services.FillType(typeof (IActivator), typeof (AssetGraphConfigurationActivator));
         }
 
         private void registerAuthorizationServices(BehaviorGraph graph)
