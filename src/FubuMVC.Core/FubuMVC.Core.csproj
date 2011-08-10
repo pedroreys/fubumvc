@@ -76,6 +76,8 @@
     </Compile>
     <Compile Include="AjaxExtensions.cs" />
     <Compile Include="Assets\AssetBase.cs" />
+    <Compile Include="Assets\AssetDeclarationChecker.cs" />
+    <Compile Include="Assets\AssetDeclarationVerificationActivator.cs" />
     <Compile Include="Assets\AssetDependency.cs" />
     <Compile Include="Assets\AssetGraph.cs" />
     <Compile Include="Assets\AssetPipelineBuilderActivator.cs" />
