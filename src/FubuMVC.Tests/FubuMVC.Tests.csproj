@@ -106,6 +106,7 @@
     <Compile Include="Assets\Files\AssetPipelineBuilderTester.cs" />
     <Compile Include="Assets\Files\AssetPipelineTester.cs" />
     <Compile Include="Assets\Files\PackageAssetsTester.cs" />
+    <Compile Include="Assets\MimeTypeProviderTester.cs" />
     <Compile Include="Behaviors\BasicBehaviorTester.cs" />
     <Compile Include="Behaviors\InterceptExceptionBehaviorTester.cs" />
     <Compile Include="Behaviors\ITargetController.cs" />
