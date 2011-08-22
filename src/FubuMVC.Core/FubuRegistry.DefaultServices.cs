@@ -218,6 +218,7 @@ namespace FubuMVC.Core
             graph.Services.SetServiceIfNone<ICombinationDeterminationService, CombinationDeterminationService>();
 
             graph.Services.SetServiceIfNone<IAssetCombinationCache, AssetCombinationCache>();
+            graph.Services.SetServiceIfNone<IAssetDependencyFinder, AssetDependencyFinderCache>();
             graph.Services.SetServiceIfNone<IAssetTagPlanner, AssetTagPlanner>();
         }
 
