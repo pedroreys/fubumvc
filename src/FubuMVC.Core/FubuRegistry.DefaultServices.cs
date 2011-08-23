@@ -222,6 +222,8 @@ namespace FubuMVC.Core
             graph.Services.SetServiceIfNone<IAssetDependencyFinder, AssetDependencyFinderCache>();
             graph.Services.SetServiceIfNone<IAssetTagPlanner, AssetTagPlanner>();
             graph.Services.SetServiceIfNone<IAssetTagBuilder, AssetTagBuilder>();
+
+            graph.Services.SetServiceIfNone<IMissingAssetHandler, TraceOnlyMissingAssetHandler>();
         }
 
         private void registerActivators(BehaviorGraph graph)
