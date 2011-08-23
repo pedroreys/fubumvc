@@ -8,6 +8,7 @@ using FubuCore.Configuration;
 using FubuCore.Reflection;
 using FubuMVC.Core.Assets;
 using FubuMVC.Core.Assets.Combination;
+using FubuMVC.Core.Assets.Files;
 using FubuMVC.Core.Assets.Tags;
 using FubuMVC.Core.Behaviors;
 using FubuMVC.Core.Conneg;
@@ -212,6 +213,10 @@ namespace FubuMVC.Core
         // TODO -- this is stupid.  Put some helper methods in here and clean this up.
         private void registerAssetServices(BehaviorGraph graph)
         {
+            var pipeline = new AssetPipeline();
+            graph.Services.SetServiceIfNone<IAssetPipeline>(pipeline);
+            graph.Services.SetServiceIfNone<IAssetFileRegistration>(pipeline);
+
             graph.Services.SetServiceIfNone(new AssetGraph());
 
             graph.Services.SetServiceIfNone<IAssetTagWriter, AssetTagWriter>();
@@ -233,6 +238,8 @@ namespace FubuMVC.Core
         private void registerActivators(BehaviorGraph graph)
         {
             graph.Services.FillType(typeof (IActivator), typeof (AssetGraphConfigurationActivator));
+            graph.Services.FillType(typeof (IActivator), typeof (AssetPipelineBuilderActivator));
+            graph.Services.FillType(typeof (IActivator), typeof (AssetDeclarationVerificationActivator));
         }
 
         private void registerAuthorizationServices(BehaviorGraph graph)
