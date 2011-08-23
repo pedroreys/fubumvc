@@ -118,7 +118,6 @@
     <Compile Include="Assets\Interfaces.cs" />
     <Compile Include="Assets\MissingAssetTagSubject.cs" />
     <Compile Include="Assets\MixedMimetypeException.cs" />
-    <Compile Include="Assets\RequestedAssetNames.cs" />
     <Compile Include="Assets\Tags\AssetTagBuilder.cs" />
     <Compile Include="Assets\Tags\YellowScreenMissingAssetHandler.cs" />
     <Compile Include="Assets\Tags\IAssetTagBuilder.cs" />
