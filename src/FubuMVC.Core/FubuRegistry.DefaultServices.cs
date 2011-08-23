@@ -209,6 +209,7 @@ namespace FubuMVC.Core
             registerAuthorizationServices(graph);
         }
 
+        // TODO -- this is stupid.  Put some helper methods in here and clean this up.
         private void registerAssetServices(BehaviorGraph graph)
         {
             graph.Services.SetServiceIfNone(new AssetGraph());
@@ -222,8 +223,11 @@ namespace FubuMVC.Core
             graph.Services.SetServiceIfNone<IAssetDependencyFinder, AssetDependencyFinderCache>();
             graph.Services.SetServiceIfNone<IAssetTagPlanner, AssetTagPlanner>();
             graph.Services.SetServiceIfNone<IAssetTagBuilder, AssetTagBuilder>();
+            graph.Services.SetServiceIfNone<IAssetRequirements, AssetRequirements>();
 
             graph.Services.SetServiceIfNone<IMissingAssetHandler, TraceOnlyMissingAssetHandler>();
+
+            graph.Services.SetServiceIfNone<IAssetTagPlanCache, AssetTagPlanCache>();
         }
 
         private void registerActivators(BehaviorGraph graph)
