@@ -114,6 +114,7 @@
     <Compile Include="Assets\Combination\ScriptFileCombinationTester.cs" />
     <Compile Include="Assets\Combination\StyleFileCombinationTester.cs" />
     <Compile Include="Assets\AssetFileDataMother.cs" />
+    <Compile Include="Assets\Content\ReadFileSourceTester.cs" />
     <Compile Include="Assets\Files\AssetFileTester.cs" />
     <Compile Include="Assets\Files\AssetPathTester.cs" />
     <Compile Include="Assets\Files\AssetPipelineBuilderIntegratedTester.cs" />
@@ -125,9 +126,9 @@
     <Compile Include="Assets\Tags\AssetTagBuilderTester.cs" />
     <Compile Include="Assets\Tags\TraceOnlyMissingAssetHandlerTester.cs" />
     <Compile Include="Assets\Tags\YellowScreenMissingAssetHandlerTester.cs" />
-    <Compile Include="Assets\Transformations\TransformationPolicyComparerTester.cs" />
-    <Compile Include="Assets\Transformations\TransformationPolicyLibraryTester.cs" />
-    <Compile Include="Assets\Transformations\TransformationPolicyTester.cs" />
+    <Compile Include="Assets\Content\TransformationPolicyComparerTester.cs" />
+    <Compile Include="Assets\Content\TransformationPolicyLibraryTester.cs" />
+    <Compile Include="Assets\Content\TransformationPolicyTester.cs" />
     <Compile Include="Behaviors\BasicBehaviorTester.cs" />
     <Compile Include="Behaviors\InterceptExceptionBehaviorTester.cs" />
     <Compile Include="Behaviors\ITargetController.cs" />
