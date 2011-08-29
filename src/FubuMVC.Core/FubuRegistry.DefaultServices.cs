@@ -4,7 +4,6 @@ using System.Reflection;
 using Bottles;
 using FubuCore;
 using FubuCore.Binding;
-using FubuCore.Configuration;
 using FubuCore.Reflection;
 using FubuMVC.Core.Assets;
 using FubuMVC.Core.Assets.Combination;
@@ -14,7 +13,6 @@ using FubuMVC.Core.Assets.Http;
 using FubuMVC.Core.Assets.Tags;
 using FubuMVC.Core.Behaviors;
 using FubuMVC.Core.Conneg;
-using FubuMVC.Core.Content;
 using FubuMVC.Core.Diagnostics;
 using FubuMVC.Core.Packaging;
 using FubuMVC.Core.Registration;
@@ -64,7 +62,7 @@ namespace FubuMVC.Core
         void Import(FubuRegistry registry, string prefix);
         void IncludeDiagnostics(bool shouldInclude);
         void IncludeDiagnostics(Action<IDiagnosticsConfigurationExpression> configure);
-        
+
 
         /// <summary>
         ///   This allows you to drop down to direct manipulation of the BehaviorGraph
@@ -96,7 +94,8 @@ namespace FubuMVC.Core
             config.ExcludeRequests(new TFilter());
         }
 
-        public static void ExcludeRequests(this IDiagnosticsConfigurationExpression config, Func<CurrentRequest, bool> shouldExclude)
+        public static void ExcludeRequests(this IDiagnosticsConfigurationExpression config,
+                                           Func<CurrentRequest, bool> shouldExclude)
         {
             config.ExcludeRequests(new LambdaRequestHistoryCacheFilter(shouldExclude));
         }
@@ -133,7 +132,6 @@ namespace FubuMVC.Core
     {
         private void setupServices(BehaviorGraph graph)
         {
-
             graph.Services.SetServiceIfNone<ITypeResolver, TypeResolver>();
             graph.Services.AddService(new TypeDescriptorCache());
 
@@ -180,7 +178,7 @@ namespace FubuMVC.Core
 
 
             graph.Services.SetServiceIfNone<IFileSystem, FileSystem>();
-            
+
             graph.Services.SetServiceIfNone<IRoutePolicy, StandardRoutePolicy>();
 
             graph.Services.SetServiceIfNone<IObjectConverter, ObjectConverter>();
@@ -202,7 +200,6 @@ namespace FubuMVC.Core
 
             graph.Services.SetServiceIfNone<IPackageFiles, PackageFilesCache>();
             graph.Services.AddService<IActivator>(typeof (PackageFileActivator));
-
 
 
             registerAssetServices(graph);
@@ -242,7 +239,6 @@ namespace FubuMVC.Core
             graph.Services.SetServiceIfNone<IImageWriter, ImageWriter>();
             graph.Services.SetServiceIfNone<IContentPipeline, ContentPipeline>();
             graph.Services.SetServiceIfNone<IContentWriter, ContentWriter>();
-
         }
 
 
@@ -282,7 +278,7 @@ namespace FubuMVC.Core
 
             graph.Services.ClearAll<HtmlConventionRegistry>();
             graph.Services.ReplaceService(library);
-            graph.Services.SetServiceIfNone(typeof(ITagGenerator<>), typeof(TagGenerator<>));
+            graph.Services.SetServiceIfNone(typeof (ITagGenerator<>), typeof (TagGenerator<>));
             graph.Services.SetServiceIfNone<IElementNamingConvention, DefaultElementNamingConvention>();
         }
     }
