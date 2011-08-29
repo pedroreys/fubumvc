@@ -239,6 +239,7 @@ namespace FubuMVC.Core
             graph.Services.SetServiceIfNone<IContentPlanner, ContentPlanner>();
             graph.Services.SetServiceIfNone<IContentPlanCache, ContentPlanCache>();
             graph.Services.SetServiceIfNone<IContentPlanExecutor, ContentPlanExecutor>();
+            graph.Services.SetServiceIfNone<IImageWriter, ImageWriter>();
         }
 
 
