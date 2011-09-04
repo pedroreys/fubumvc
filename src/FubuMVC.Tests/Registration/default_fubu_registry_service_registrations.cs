@@ -145,6 +145,7 @@ namespace FubuMVC.Tests.Registration
             activators.Any(x => x.Type == typeof (AssetGraphConfigurationActivator)).ShouldBeTrue();
             activators.Any(x => x.Type == typeof (AssetPipelineBuilderActivator)).ShouldBeTrue();
             activators.Any(x => x.Type == typeof (AssetDeclarationVerificationActivator)).ShouldBeTrue();
+            activators.Any(x => x.Type == typeof (AssetPolicyActivator)).ShouldBeTrue();
 
             activators.RemoveAll(x => !x.Type.Namespace.Contains(typeof (AssetGraph).Namespace));
 
@@ -152,6 +153,7 @@ namespace FubuMVC.Tests.Registration
             activators[1].Type.ShouldEqual(typeof (AssetPipelineBuilderActivator));
             activators[2].Type.ShouldEqual(typeof (AssetDeclarationVerificationActivator));
             activators[3].Type.ShouldEqual(typeof (MimetypeRegistrationActivator));
+            activators[4].Type.ShouldEqual(typeof (AssetPolicyActivator));
         }
 
         [Test]
