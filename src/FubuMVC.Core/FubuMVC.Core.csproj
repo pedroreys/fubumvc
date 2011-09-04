@@ -146,6 +146,7 @@
     <Compile Include="Assets\MimetypeRegistrationActivator.cs" />
     <Compile Include="Assets\MissingAssetTagSubject.cs" />
     <Compile Include="Assets\MixedMimetypeException.cs" />
+    <Compile Include="Assets\RecordingAssetRegistration.cs" />
     <Compile Include="Assets\Tags\AssetTagBuilder.cs" />
     <Compile Include="Assets\Tags\YellowScreenMissingAssetHandler.cs" />
     <Compile Include="Assets\Tags\IAssetTagBuilder.cs" />
