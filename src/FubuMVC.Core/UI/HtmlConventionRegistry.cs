@@ -19,6 +19,12 @@ namespace FubuMVC.Core.UI
 
         public IEnumerable<TagProfile> Profiles { get { return _profiles.GetAll(); } }
 
+        public void DefaultProfile(Action<TagProfileExpression> configure)
+        {
+            var expression = new TagProfileExpression(_profiles[TagProfile.DEFAULT]);
+            configure(expression);
+        }
+
         public void Profile(string profileName, Action<TagProfileExpression> configure)
         {
             var expression = new TagProfileExpression(_profiles[profileName]);
